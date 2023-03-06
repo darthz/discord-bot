@@ -1,10 +1,11 @@
 const { Events } = require("discord.js");
+const { replyMessage } = require("../functions/functions.js");
 
 module.exports = {
   name: Events.MessageCreate,
-  execute(message) {
+  async execute(message) {
     if (message.content.startsWith("!reply")) {
-      message.reply("Hey");
+      replyMessage(message, "hey");
     }
   },
 };
